@@ -1,0 +1,50 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "hk1_r12x_analysis"
+version = "0.0.1"
+description = "Analysis of omics data associated with the HK1 R12X single nucleotide variant."
+authors = [
+  { name = "Zachary B. Haiman" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "pre-commit",
+    "black",
+    "flake8",
+    "isort",
+    "loguru",
+    "mkdocs",
+    "pip",
+    "python-dotenv",
+    "tqdm",
+    "typer",
+    "jupyter",
+    "pandas",
+    "numpy",
+    "scipy",
+
+]
+requires-python = "~=3.12.0"
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+known_first_party = ["hk1_r12x_analysis"]
+force_sort_within_sections = true

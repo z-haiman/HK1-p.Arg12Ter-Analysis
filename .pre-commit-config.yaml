@@ -1,0 +1,44 @@
+minimum_pre_commit_version: '3.1.0'
+default_language_version:
+    python: python3
+ci:
+    autoupdate_branch: 'develop'
+    autoupdate_schedule: monthly
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+        exclude_types: [tsv, csv]
+        exclude: setup.cfg
+    - repo: https://github.com/pre-commit/pygrep-hooks
+      rev: v1.10.0
+      hooks:
+      - id: python-check-blanket-noqa
+      - id: python-no-eval
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+      - id: rst-backticks
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+    - repo: https://github.com/pycqa/isort
+      rev: 7.0.0
+      hooks:
+      - id: isort
+    - repo: https://github.com/psf/black
+      rev: 25.9.0
+      hooks:
+      - id: black
+    - repo: https://github.com/PyCQA/flake8
+      rev: 7.3.0
+      hooks:
+        - id: flake8
+    - repo: https://github.com/nbQA-dev/nbQA
+      rev: 1.9.1
+      hooks:
+      - id: nbqa-isort
+        args: [--profile=black]
+      - id: nbqa-black
