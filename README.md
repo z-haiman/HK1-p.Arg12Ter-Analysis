@@ -25,15 +25,15 @@ Analysis of omics data associated with the HK1 R12Ter single nucleotide variant.
 ├── pyproject.toml     <- Project configuration file with package metadata for 
 │                         hk1_r12ter_analysis and configuration for tools like black
 │
-├── reports            <- Generated graphics, figures, downloaded data and analysis from external tools, etc. to be used for Figures
-│   ├── Figure_1       <- For Figure 1
-│   ├── Figure_2       <- For Figure 1
-│   ├── Figure_3       <- For Figure 1
-│   ├── Figure_4       <- For Figure 1
-│   ├── Figure_5       <- For Figure 1
-│   ├── Figure_6       <- For Figure 1
-│   ├── Figure_S1      <- For Figure 1
-│   └── Final          <- Final versions of the figures as .PNG files
+├── reports            <- Generated graphics, figures, downloaded data and analysis from external tools, etc. to be used for 
+│   ├── Figure_1.zip       <- For Figure 1
+│   ├── Figure_2.zip       <- For Figure 2
+│   ├── Figure_3.zip       <- For Figure 3
+│   ├── Figure_4.zip       <- For Figure 4
+│   ├── Figure_5.zip       <- For Figure 5
+│   ├── Figure_6.zip       <- For Figure 6
+│   ├── Figure_S1.zip      <- For Figure S1
+│   └── Finalized          <- Final versions of all figures as .PNG files
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
@@ -46,16 +46,22 @@ Analysis of omics data associated with the HK1 R12Ter single nucleotide variant.
     │
     ├── config.py               <- Store useful variables and configuration
     │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
+    ├── data                
+    │   ├── __init__.py 
+    │   ├── cleaning.py         <- Functions for cleaning and formatting data
+    │   ├── filtering.py        <- Functions for filtering data
+    │   ├── normalize.py        <- Functions for normalizing data
+    │   ├── scale.py            <- Functions for scaling data
+    │   └── transform.py        <- Functions for transforming data
+    │ 
     ├── modeling                
     │   ├── __init__.py 
-    │   ├── linear_model.py     <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    │   └── linear_model.py     <- Code to perform covariate analyses using linear models via limma algorithm
     │
-    └── plots.py                <- Code to create visualizations
+    ├── io.py                       <- Functions to save/load files
+    ├── linkage_disequilibrium.py   <- Functions related to linkage disequilibrium calculationsconfiguration
+    ├── util.py                     <- Utility functions for other modules
+    └── visualize.py                <- Functions for visualization
 ```
 
 --------
