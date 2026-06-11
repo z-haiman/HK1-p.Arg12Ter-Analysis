@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = HK1-R12X-analysis
+PROJECT_NAME = HK1-R12Ter-analysis
 PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
 
@@ -29,15 +29,18 @@ clean:
 ## Lint using flake8, black, and isort (use `make format` to do formatting)
 .PHONY: lint
 lint:
-	flake8 hk1_r12x_analysis
-	isort --check --diff hk1_r12x_analysis
-	black --check hk1_r12x_analysis
+	flake8 hk1_r12ter_analysis
+	isort --check --diff hk1_r12ter_analysis
+	black --check hk1_r12ter_analysis
+	nbqa flake8 notebooks/
+	nbqa isort notebooks/ --check --diff
+	nbqa black notebooks/ --check --diff
 
 ## Format source code with pre-commit (black, isort, etc.)
 .PHONY: format
 format:
-# 	isort hk1_r12x_analysis
-# 	black hk1_r12x_analysis
+# 	isort hk1_r12ter_analysis
+# 	black hk1_r12ter_analysis
 	pre-commit run --all-files
 
 ## Set up Python interpreter environment
@@ -59,7 +62,7 @@ create_environment:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) hk1_r12x_analysis/dataset.py
+	$(PYTHON_INTERPRETER) hk1_r12ter_analysis/dataset.py
 
 
 #################################################################################

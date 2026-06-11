@@ -1,5 +1,9 @@
 # Data
 /data/
+# Generated figure panels, for space only keep those moved into the Finalized folder
+
+/reports/*
+!/reports/Finalized/
 
 # Mac OS-specific storage files
 .DS_Store
