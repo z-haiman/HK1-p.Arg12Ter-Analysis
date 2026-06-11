@@ -3,6 +3,9 @@
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
+<a href="https://doi.org/10.5281/zenodo.20639043">
+    <img src="https://zenodo.org/badge/1265906020.svg" alt="DOI">
+</a>
 
 Analysis of omics data associated with the HK1 R12Ter single nucleotide variant.
 
